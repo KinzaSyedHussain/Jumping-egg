@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eggo game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="game-container">
+        <div id="score-board">Score <span id="score">0</span></div>
+
+        <div id="egg" class="hidden"></div>
+
+        <div id="obstacle"></div>
+
+        <div id="menu">
+            <h2>Take your EGG!</h2>
+            <div class="characters">
+                <button onclick="selectCharacter('jobless.png')"> Jobless</button>
+                <button onclick="selectCharacter('michaelJ.png')"> MJ</button>
+                <button onclick="selectCharacter('prinncess')"> Princess</button>
+                <button onclick="selectCharacter('magician.png')">Magician</button>
+                <button onclick="selectCharacter('cutie.png')"> Cutie</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
