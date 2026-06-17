@@ -1,0 +1,63 @@
+body {
+    background-color: honeydew;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+#game {
+    width: 600px;
+    height: 200px;
+    border-bottom: 200px;
+    position: relative;
+    overflow: hidden;
+    background-color: bisque;
+}
+
+#scoreboard {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    z-index: 10;
+}
+
+#egg {
+    width: 55px;
+    height: 65px;
+    position: absolute;
+    bottom: 0;
+    left: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+.hidden {
+    display: none;
+}
+
+.jump {
+    animation: jumpAnimation 0.5s linear;
+}
+
+@keyframes jumpAnimation {
+    0% { bottom: 0;}
+    50% { bottom: 120px;}
+    100% { bottom: 0;}
+}
+
+#obstacle {
+    width: 35px;
+    height: 55px;
+    position: absolute;
+    left: 600px;
+    background-image: url('knife.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
