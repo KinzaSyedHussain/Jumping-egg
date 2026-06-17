@@ -3,7 +3,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100;
+    height: 100vh;
     margin: 0;
     font-family: Arial, sans-serif;
 }
@@ -11,7 +11,7 @@ body {
 #game {
     width: 600px;
     height: 200px;
-    border-bottom: 200px;
+    border-bottom: 5px solid #333 ;
     position: relative;
     overflow: hidden;
     background-color: bisque;
@@ -52,9 +52,10 @@ body {
 }
 
 #obstacle {
-    width: 35px;
-    height: 55px;
+    width: 100px;
+    height: 80px;
     position: absolute;
+    bottom: 0;
     left: 600px;
     background-image: url('knife.png');
     background-size: contain;
@@ -77,7 +78,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgva(0, 0, 0, 0.85);
+    background-color: rgba(0, 0, 0, 0.85);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -101,7 +102,7 @@ body {
     font-weight: bold;
     cursor: pointer;
     border-radius: 5px;
-    transition: 0.2;
+    transition: 0.2s;
 }
 
 .character-options button:hover {
