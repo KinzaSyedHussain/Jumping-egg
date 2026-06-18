@@ -18,12 +18,23 @@
         <div id="menu">
             <h2>Take your EGG!</h2>
             <div class="characters">
-                <button onclick="selectCharacter('jobless.png')"> Jobless</button>
-                <button onclick="selectCharacter('michaelJ.png')"> MJ</button>
-                <button onclick="selectCharacter('princess.png')"> Princess</button>
-                <button onclick="selectCharacter('magician.png')">Magician</button>
-                <button onclick="selectCharacter('Cutie.png')"> Cutie</button>
+                <button class="char-btn btn-jobless" onclick="selectCharacter('jobless.png')"> Jobless</button>
+                <button class="char-btn btn-mj" onclick="selectCharacter('michaelJ.png')"> MJ</button>
+                <button class="char-btn btn-princess" onclick="selectCharacter('princess.png')"> Princess</button>
+                <button class="char-btn btn-magicican" onclick="selectCharacter('magician.png')">Magician</button>
+                <button class="char-btn btn-cutie" onclick="selectCharacter('Cutie.png')"> Cutie</button>
             </div>
+        </div>
+
+        <div id="scoreboard">
+            <div id="scoretext">Score: <span id="score">0</span></div>
+            <div id="space" class="hidden">Press SPACE BAR to Jump!</div>
+        </div>
+
+        <div id="gameoverscreen" class="hiddenpopup">
+            <h1 class="gameovertitle">GAME OVER!</h1>
+            <p class="finalscore">Final Score: <span id="finalscore">0</span></p>
+            <button class="restart" onclick="resetGame()">PLAY AGAIN</button>
         </div>
     </div>
 

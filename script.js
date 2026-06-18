@@ -2,6 +2,9 @@ const egg = document.getElementById('egg');
 const obstacle = document.getElementById('obstacle');
 const scoreDisplay = document.getElementById("score");
 const menu = document.getElementById("menu");
+const gameOverScreen = document.getElementById("gameoverscreen");
+const finalScoreDisplay = document.getElementById("finalscore")
+const spaceInstruction = document.getElementById("space");
 
 let score = 0;
 let isGameOver = false;
@@ -12,6 +15,10 @@ function selectCharacter(imageName) {
     menu.style.display = "none";
     egg.classList.remove("hidden");
 
+    if(spaceInstruction) {
+        spaceInstruction.classList.remove("hidden");
+    }
+
     gameStarted = true;
     obstacle.classList.add("movingobstacle");
     startGameLoop();
@@ -19,6 +26,9 @@ function selectCharacter(imageName) {
 
 document.addEventListener("keydown", function(event){
     if (event.code === "Space" && gameStarted && !isGameOver) {
+        if(spaceInstruction) {
+            spaceInstruction.classList.add("hidden");
+        }
         jump();
     }
 });
@@ -33,7 +43,7 @@ function jump() {
             score++;
             scoreDisplay.innerText = score;
         }
-    }, 500);
+    }, 600);
 }
 
 function startGameLoop() {
@@ -41,18 +51,20 @@ function startGameLoop() {
         const eggbottom = parseInt(window.getComputedStyle(egg).getPropertyValue("bottom"));
         const obstacleleft = parseInt(window.getComputedStyle(obstacle).getPropertyValue("left"));
 
-        if (obstacleleft > 50 && obstacleleft < 95 && eggbottom <= 45) {
+        if (obstacleleft > 80 && obstacleleft < 130 && eggbottom <= 110) {
             isGameOver = true;
             
             obstacle.classList.remove("movingobstacle");
             obstacle.style.left = `${obstacleleft}px`;
             egg.style.animationPlayState = "paused";
-
             clearInterval(checkCollision);
-            setTimeout(() => {
-                alert("Game Over! Final Score: " + score);
-                window.location.reload();
-            }, 10);
+
+            finalScoreDisplay.innerText = score;
+            gameOverScreen.classList.remove("hiddenpopup");
         }
-    }, 10);    
+    }, 10);
+}
+
+function resetGame() {
+    window.location.reload();
 }
