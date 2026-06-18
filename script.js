@@ -1,10 +1,10 @@
 const egg = document.getElementById('egg');
 const obstacle = document.getElementById('obstacle');
-const scoreDisplay = document.getElementById("score");
+const scoredisplay = document.querySelector("#scoretext #score");
 const menu = document.getElementById("menu");
-const gameOverScreen = document.getElementById("gameoverscreen");
-const finalScoreDisplay = document.getElementById("finalscore")
-const spaceInstruction = document.getElementById("space");
+const gameoverscreen = document.getElementById("gameoverscreen");
+const finalscoredisplay = document.getElementById("finalscore")
+const spaceinstruction = document.getElementById("space");
 
 let score = 0;
 let isGameOver = false;
@@ -15,21 +15,26 @@ function selectCharacter(imageName) {
     menu.style.display = "none";
     egg.classList.remove("hidden");
 
-    if(spaceInstruction) {
-        spaceInstruction.classList.remove("hidden");
+    if(spaceinstruction) {
+        spaceinstruction.classList.remove("hidden");
     }
 
-    gameStarted = true;
-    obstacle.classList.add("movingobstacle");
     startGameLoop();
 }
 
 document.addEventListener("keydown", function(event){
-    if (event.code === "Space" && gameStarted && !isGameOver) {
-        if(spaceInstruction) {
-            spaceInstruction.classList.add("hidden");
+    if (event.code === "Space" && !isGameOver) {
+        if(!gameStarted && egg.style.backgroundImage !== "") {
+            gameStarted = true;
+            obstacle.classList.add("movingobstacle");
+            if(spaceinstruction) {
+                spaceinstruction.classList.add("hidden");
+            }
+            return;
         }
-        jump();
+        if(gameStarted) {
+           jump();
+        }
     }
 });
 
@@ -41,7 +46,7 @@ function jump() {
         egg.classList.remove("jump");
         if (!isGameOver) {
             score++;
-            scoreDisplay.innerText = score;
+            scoredisplay.innerText = score;
         }
     }, 600);
 }
@@ -59,8 +64,8 @@ function startGameLoop() {
             egg.style.animationPlayState = "paused";
             clearInterval(checkCollision);
 
-            finalScoreDisplay.innerText = score;
-            gameOverScreen.classList.remove("hiddenpopup");
+            finalscoredisplay.innerText = score;
+            gameoverscreen.classList.remove("hiddenpopup");
         }
     }, 10);
 }

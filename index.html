@@ -9,7 +9,6 @@
 <body>
 
     <div id="game">
-        <div id="score">Score <span id="score">0</span></div>
 
         <div id="egg" class="hidden"></div>
 
@@ -18,11 +17,26 @@
         <div id="menu">
             <h2>Take your EGG!</h2>
             <div class="characters">
-                <button class="char-btn btn-jobless" onclick="selectCharacter('jobless.png')"> Jobless</button>
-                <button class="char-btn btn-mj" onclick="selectCharacter('michaelJ.png')"> MJ</button>
-                <button class="char-btn btn-princess" onclick="selectCharacter('princess.png')"> Princess</button>
-                <button class="char-btn btn-magicican" onclick="selectCharacter('magician.png')">Magician</button>
-                <button class="char-btn btn-cutie" onclick="selectCharacter('Cutie.png')"> Cutie</button>
+               <div class="egg-container">
+                   <button class="char-btn btn-jobless" onclick="selectCharacter('jobless.png')"></button>
+                   <span class="eggname">Jobless</span>
+                </div>
+                <div class="egg-container">
+                    <button class="char-btn btn-mj" onclick="selectCharacter('michaelJ.png')"></button>
+                    <span class="eggname">MJ</span>
+                </div>
+                <div class="egg-container">
+                    <button class="char-btn btn-princess" onclick="selectCharacter('princess.png')"></button>
+                    <span class="eggname">Princess</span>
+                </div>
+                <div class="egg-container">
+                    <button class="char-btn btn-magician" onclick="selectCharacter('magician.png')"></button>
+                    <span class="eggname">Magician</span>
+                </div>
+                <div class="egg-container">
+                    <button class="char-btn btn-cutie" onclick="selectCharacter('Cutie.png')"></button>
+                    <span class="eggname">Cutie</span>
+                </div>
             </div>
         </div>
 
