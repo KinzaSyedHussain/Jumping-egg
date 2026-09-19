@@ -23,3 +23,6 @@ Once selected, look for the center text prompt: "Press SPACE BAR to Jump!"
 Time your jumps precisely using your keyboard Spacebar to leap over the sliding kitchen knife.
 
 Every successful jump increases your active score! If the knife catches you, it's Game Over!
+
+Want to play?
+https://kinzasyedhussain.github.io/Jumping-egg/
